@@ -42,11 +42,11 @@ export default function Articles() {
               <div className="row">
                 <div className="col-3">
                   <Link to={`/article/${id}`}>
-                  <img
-                    src={imageUrl}
-                    alt="title"
-                    style={{ height: 180, width: 180 }}
-                  />
+                    <img
+                      src={imageUrl}
+                      alt="title"
+                      style={{ height: 180, width: 180 }}
+                    />
                   </Link>
                 </div>
                 <div className="col-9 ps-3">
@@ -68,6 +68,14 @@ export default function Articles() {
 
                   <div className="d-flex flex-row-reverse">
                     {user && <LikeArticle id={id} likes={likes} />}
+                    <div className="pe-2">
+                      <p>{likes?.length} likes</p>
+                    </div>
+                    {comments && comments.length > 0 && (
+                      <div className="pe-2">
+                        <p>{comments?.length} comments</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
